@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Retrieve Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+{% if products %}
+    <h2 class="text-center">Product Details</h2>
+    <table class="table">
+    <thead>
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Class</th>
+        <th>Product Color</th>
+        <th>Product Weight</th>
+        <th>Product Cost</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in products %}
+    <tr>
+    <td>{{ i.product_id }}</td>
+    <td>{{ i.product_name }}</td>
+    <td>{{ i.product_class }}</td>
+    <td>{{ i.product_color }}</td>
+    <td>{{ i.product_weight }}</td>
+    <td>{{ i.product_cost }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<h1>Data Is Not Available In Database</h1>
+{% endif %}
+</body>
+</html>
